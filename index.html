@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patel Parivaar - Matrimonial Portfolio | Kansa, Visnagar, Mahesana</title>
+  <meta name="description" content="Premium matrimonial portfolio of Patel Parivaar from Kansa, Visnagar, Mahesana, Gujarat. Family profiles of Patel Rina Ben Mahendrabhai and Patel Gaurang Bhai Mahendrabhai." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Patel Parivaar - Matrimonial Portfolio" />
+  <meta property="og:description" content="Premium family portfolio from Kansa, Visnagar, Mahesana, Gujarat." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Patel Parivaar - Matrimonial Portfolio" />
+  <meta name="twitter:description" content="Premium family portfolio from Kansa, Visnagar, Mahesana, Gujarat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FDFAF5;
+      --fg: #2D2D2D;
+      --card: #F8F3EA;
+      --border: #D4BC85;
+      --primary: #C9A84C;
+      --primary-fg: #FDFAF5;
+      --rose: #B76E79;
+      --green: #8FAF7E;
+      --muted: #E8DFC8;
+      --muted-fg: #777;
+      --shadow: rgba(0,0,0,0.10);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Lato', sans-serif;
+    }
+    [data-theme="dark"] {
+      --bg: #1A1410;
+      --fg: #E8D8B8;
+      --card: #26201A;
+      --border: #3A3028;
+      --primary: #C9A84C;
+      --primary-fg: #1A1410;
+      --rose: #C4848F;
+      --green: #8FAF7E;
+      --muted: #2E271F;
+      --muted-fg: #999;
+      --shadow: rgba(0,0,0,0.4);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--fg);
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(201,168,76,0.04) 24px, rgba(201,168,76,0.04) 25px),
+        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(201,168,76,0.03) 24px, rgba(201,168,76,0.03) 25px);
+      transition: background-color 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-serif); font-weight: 500; }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ─── LOADING SCREEN ─── */
+    #loading-screen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      transition: opacity 0.8s ease;
+    }
+    #loading-screen.fade-out { opacity: 0; pointer-events: none; }
+    .loading-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      background: linear-gradient(90deg, #B8860B, #FFD700, #C9A84C, #FFD700, #B8860B);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 2s linear infinite;
+      text-align: center;
+      position: relative; z-index: 2;
+    }
+    .loading-line {
+      width: 6rem; height: 1px; background: var(--primary);
+      margin: 1rem auto 0; opacity: 0.5;
+    }
+    .petal {
+      position: absolute;
+      border-radius: 150% 0 150% 0;
+      background: rgba(183,110,121,0.35);
+      animation: petalFall linear infinite;
+      top: -20px;
+    }
+    @keyframes petalFall {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      padding: 1.25rem 0;
+      transition: all 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(253,250,245,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 0;
+      box-shadow: 0 2px 20px var(--shadow);
+    }
+    [data-theme="dark"] nav.scrolled { background: rgba(26,20,16,0.88); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--primary);
+      display: flex; align-items: center; gap: 0.5rem;
+      cursor: pointer;
+    }
+    .nav-logo-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--primary); flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a {
+      font-size: 0.75rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--fg);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-controls { display: flex; align-items: center; gap: 0.5rem; border-left: 1px solid var(--border); padding-left: 1rem; margin-left: 0.5rem; }
+    .btn-icon {
+      background: none; border: none; cursor: pointer;
+      color: var(--muted-fg); padding: 0.4rem;
+      border-radius: 0.25rem; display: flex; align-items: center; gap: 0.25rem;
+      font-size: 0.75rem; font-family: var(--font-sans);
+      transition: color 0.2s;
+    }
+    .btn-icon:hover { color: var(--primary); }
+    .btn-icon svg { width: 16px; height: 16px; }
+    #hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--fg); }
+    #hamburger svg { width: 24px; height: 24px; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 1rem;
+      padding: 1.5rem 2rem; background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-serif); font-size: 1.2rem; color: var(--fg); }
+    .mobile-menu a:hover { color: var(--primary); }
+    .mobile-lang { display: flex; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .lang-btn {
+      padding: 0.25rem 0.75rem; border-radius: 999px;
+      border: 1px solid var(--border); background: none;
+      cursor: pointer; font-size: 0.75rem; color: var(--fg);
+      font-family: var(--font-sans); transition: all 0.2s;
+    }
+    .lang-btn.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-controls { display: none; }
+      #hamburger { display: flex; }
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 10vw, 7rem);
+      background: linear-gradient(90deg, #B8860B, #FFD700, #C9A84C, #FFD700, #B8860B);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+      line-height: 1.1;
+    }
+    .hero-sub {
+      font-size: clamp(0.75rem, 2vw, 1.1rem);
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--muted-fg); margin-top: 1.5rem;
+    }
+    .particle {
+      position: absolute; border-radius: 50%;
+      background: rgba(201,168,76,0.25);
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(0); opacity: 0; }
+      20%  { opacity: 1; }
+      100% { transform: translateY(-100px); opacity: 0; }
+    }
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      opacity: 0; animation: fadeIn 1s 2s forwards;
+    }
+    .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-fg); }
+    .scroll-line { width: 1px; height: 3rem; background: var(--primary); opacity: 0.5; animation: lineAnim 2s ease-in-out infinite; }
+    @keyframes lineAnim { 0%,100% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* ─── SECTION DIVIDER ─── */
+    .section-divider {
+      display: flex; justify-content: center; align-items: center;
+      padding: 2rem 0; color: rgba(201,168,76,0.4);
+    }
+    .section-divider svg { width: 200px; }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 6rem 0; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-title { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--primary); margin-bottom: 1rem; }
+    .section-line { width: 5rem; height: 3px; background: var(--primary); margin: 0 auto; }
+    .reveal { opacity: 0; transform: translateY(2.5rem); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── PROFILE SECTIONS ─── */
+    .profile-section { background: var(--bg); position: relative; overflow: hidden; }
+    .profile-section.gaurang { background: var(--card); border-top: 1px solid var(--border); }
+    .profile-layout {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center;
+    }
+    .profile-layout.reverse { grid-template-columns: 2fr 1fr; }
+    @media (max-width: 900px) {
+      .profile-layout, .profile-layout.reverse { grid-template-columns: 1fr; }
+      .profile-layout.reverse .profile-card-wrap { order: -1; }
+    }
+
+    /* Scrapbook card */
+    .scrapbook-card {
+      background: #fff;
+      padding: 1rem 1rem 2.5rem;
+      box-shadow: 0 8px 40px var(--shadow);
+      position: relative;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 97% 100%, 94% 87%, 91% 100%, 88% 87%, 85% 100%, 82% 87%, 79% 100%, 76% 87%, 73% 100%, 70% 87%, 67% 100%, 64% 87%, 61% 100%, 58% 87%, 55% 100%, 52% 87%, 49% 100%, 46% 87%, 43% 100%, 40% 87%, 37% 100%, 34% 87%, 31% 100%, 28% 87%, 25% 100%, 22% 87%, 19% 100%, 16% 87%, 13% 100%, 10% 87%, 7% 100%, 4% 87%, 1% 100%, 0% 87%);
+      width: 280px; max-width: 100%;
+      margin: 0 auto;
+      animation: cardFloat 5s ease-in-out infinite;
+    }
+    .scrapbook-card.rina { transform: rotate(2deg); }
+    .scrapbook-card.gaurang { transform: rotate(-2deg); animation-delay: 1s; }
+    [data-theme="dark"] .scrapbook-card { background: #2a2018; }
+    @keyframes cardFloat { 0%,100% { margin-top: 0; } 50% { margin-top: -10px; } }
+    .washi { position: absolute; height: 18px; border-radius: 2px; z-index: 10; }
+    .washi.tl { width: 64px; top: -6px; left: -10px; transform: rotate(-12deg); background: rgba(183,110,121,0.4); }
+    .washi.tr { width: 64px; top: -4px; right: -8px; transform: rotate(12deg); background: rgba(201,168,76,0.4); }
+    .washi.tr2 { width: 64px; top: -6px; right: -10px; transform: rotate(12deg); background: rgba(201,168,76,0.4); }
+    .washi.tl2 { width: 64px; top: -4px; left: -8px; transform: rotate(-12deg); background: rgba(143,175,126,0.4); }
+    .profile-photo-wrap { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+    .profile-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .verified-badge {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      font-size: 0.6rem; letter-spacing: 0.1em;
+      text-transform: uppercase; font-weight: 700;
+      padding: 0.25rem 0.5rem; color: #fff;
+    }
+    .verified-badge.rose { background: var(--rose); }
+    .verified-badge.gold { background: var(--primary); }
+    .card-name {
+      font-family: var(--font-serif); font-size: 1.8rem;
+      text-align: center; margin-top: 1rem; color: var(--fg);
+    }
+
+    /* Profile details */
+    .profile-name { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 0.5rem; }
+    .profile-name.rose { color: var(--rose); }
+    .profile-name.gold { color: var(--primary); }
+    .profile-accent-line { width: 5rem; height: 3px; margin-bottom: 2rem; }
+    .profile-accent-line.rose { background: var(--rose); }
+    .profile-accent-line.gold { background: var(--primary); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin-bottom: 3rem; }
+    .info-item { border-bottom: 1px solid rgba(201,168,76,0.2); padding-bottom: 0.5rem; }
+    .info-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted-fg); margin-bottom: 0.2rem; }
+    .info-value { font-size: 1.05rem; color: var(--fg); }
+
+    /* Family cards */
+    .family-sub-title {
+      font-family: var(--font-serif); font-size: 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .family-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 600px) { .family-cards { grid-template-columns: 1fr 1fr; } }
+    .family-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 0.75rem; padding: 1rem;
+      box-shadow: 0 2px 12px var(--shadow);
+      transition: transform 0.2s;
+    }
+    .family-card:hover { transform: translateY(-3px); }
+    .family-avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      overflow: hidden; margin-bottom: 0.75rem;
+      border: 2px solid var(--primary);
+    }
+    .family-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .family-rel { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 0.25rem; }
+    .family-rel.rose { color: var(--rose); }
+    .family-rel.gold { color: var(--primary); }
+    .family-name { font-family: var(--font-serif); font-size: 1rem; line-height: 1.3; color: var(--fg); }
+    .family-occ { font-size: 0.8rem; color: var(--muted-fg); margin-top: 0.25rem; }
+
+    /* ─── FAMILY SECTION ─── */
+    #family { background: var(--bg); border-top: 1px solid var(--border); }
+    .family-intro { font-size: 1.1rem; color: var(--muted-fg); line-height: 1.8; max-width: 42rem; margin: 0 auto 4rem; text-align: center; }
+    .family-main { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    @media (max-width: 768px) { .family-main { grid-template-columns: 1fr; gap: 2rem; } }
+    .parent-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 1.5rem;
+      display: flex; align-items: center; gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .parent-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      overflow: hidden; flex-shrink: 0;
+      border: 2px solid var(--primary);
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+    .parent-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .parent-role { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem; }
+    .parent-name { font-family: var(--font-serif); font-size: 1.4rem; color: var(--fg); margin-bottom: 0.25rem; }
+    .parent-desc { font-size: 0.85rem; color: var(--muted-fg); }
+    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .value-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 1.5rem; text-align: center;
+      transition: border-color 0.2s;
+    }
+    .value-card:hover { border-color: var(--primary); }
+    .value-icon {
+      width: 3rem; height: 3rem; border-radius: 50%;
+      background: rgba(201,168,76,0.12); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem; font-size: 1.25rem;
+    }
+    .value-title { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--fg); }
+    .value-desc { font-size: 0.85rem; color: var(--muted-fg); }
+
+    /* ─── GALLERY ─── */
+    #gallery { background: var(--bg); }
+    .gallery-grid { columns: 4; column-gap: 1.5rem; }
+    @media (max-width: 900px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 500px) { .gallery-grid { columns: 1; } }
+    .polaroid {
+      background: #fff; padding: 0.75rem 0.75rem 2.5rem;
+      box-shadow: 0 4px 24px var(--shadow);
+      margin-bottom: 1.5rem; break-inside: avoid;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: block;
+    }
+    [data-theme="dark"] .polaroid { background: #2a2018; }
+    .polaroid:nth-child(1) { transform: rotate(-3deg); }
+    .polaroid:nth-child(2) { transform: rotate(2deg); }
+    .polaroid:nth-child(3) { transform: rotate(-1deg); }
+    .polaroid:nth-child(4) { transform: rotate(2.5deg); }
+    .polaroid:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 12px 40px var(--shadow); }
+    .polaroid img { width: 100%; display: block; min-height: 160px; object-fit: cover; object-position: top; }
+    .polaroid-caption { font-family: var(--font-serif); font-size: 1.1rem; text-align: center; margin-top: 0.75rem; color: var(--fg); }
+
+    /* Lightbox */
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.9); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 2px; border: 3px solid rgba(255,255,255,0.15); }
+    #lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none; color: #fff; font-size: 2rem;
+      cursor: pointer; line-height: 1;
+    }
+
+    /* ─── TIMELINE ─── */
+    #timeline { background: var(--card); }
+    .timeline { max-width: 42rem; margin: 0 auto; border-left: 2px solid rgba(201,168,76,0.3); padding-left: 2rem; }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute; left: -2.7rem; top: 0.25rem;
+      width: 1rem; height: 1rem; border-radius: 50%;
+      background: var(--primary); border: 3px solid var(--bg);
+    }
+    .timeline-year { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem; }
+    .timeline-title { font-family: var(--font-serif); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.5rem; }
+    .timeline-desc { color: var(--muted-fg); font-size: 0.95rem; line-height: 1.6; }
+
+    /* ─── LOCATION ─── */
+    #location { background: var(--bg); }
+    .location-desc { font-size: 1.1rem; color: var(--muted-fg); text-align: center; max-width: 36rem; margin: 0 auto 3rem; line-height: 1.7; }
+    .map-wrap {
+      max-width: 900px; margin: 0 auto;
+      border-radius: 1rem; overflow: hidden;
+      border: 3px solid var(--primary);
+      box-shadow: 0 8px 40px var(--shadow);
+    }
+    .map-wrap iframe { display: block; width: 100%; border: 0; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--card); }
+    .contact-inner { max-width: 48rem; margin: 0 auto; text-align: center; }
+    #contact-locked {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 1.5rem; padding: 4rem 2rem;
+      box-shadow: 0 4px 24px var(--shadow);
+      max-width: 32rem; margin: 0 auto;
+    }
+    .lock-icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
+    .contact-protected-title { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.75rem; color: var(--fg); }
+    .contact-protected-desc { color: var(--muted-fg); margin-bottom: 2rem; font-size: 1rem; }
+    .btn-unlock {
+      background: var(--primary); color: var(--primary-fg);
+      border: none; padding: 0.9rem 2.5rem; border-radius: 999px;
+      font-size: 1rem; cursor: pointer;
+      font-family: var(--font-sans);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: opacity 0.2s; box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+    }
+    .btn-unlock:hover { opacity: 0.85; }
+    #contact-unlocked { display: none; }
+    #contact-unlocked.show { display: block; }
+    .contact-verified-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(34,197,94,0.12); color: #16a34a;
+      padding: 0.6rem 1.5rem; border-radius: 999px;
+      font-weight: 600; margin-bottom: 2rem; font-size: 0.95rem;
+    }
+    [data-theme="dark"] .contact-verified-badge { color: #4ade80; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; margin-bottom: 2rem; }
+    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 2rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+    .contact-role { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem; }
+    .contact-name { font-family: var(--font-serif); font-size: 1.4rem; color: var(--fg); margin-bottom: 0.5rem; }
+    .contact-number { font-size: 1.1rem; color: var(--muted-fg); margin-bottom: 1.5rem; font-family: monospace; letter-spacing: 0.05em; }
+    .contact-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-call {
+      flex: 1; padding: 0.6rem 1rem; border-radius: 0.5rem;
+      border: 1px solid var(--primary); background: none;
+      color: var(--primary); cursor: pointer;
+      font-family: var(--font-sans); font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      transition: background 0.2s;
+    }
+    .btn-call:hover { background: rgba(201,168,76,0.1); }
+    .btn-wa {
+      flex: 1; padding: 0.6rem 1rem; border-radius: 0.5rem;
+      background: #25D366; color: #fff; border: none; cursor: pointer;
+      font-family: var(--font-sans); font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      transition: opacity 0.2s;
+    }
+    .btn-wa:hover { opacity: 0.88; }
+    .btn-lock {
+      background: none; border: 1px solid var(--border);
+      color: var(--muted-fg); padding: 0.6rem 1.5rem; border-radius: 999px;
+      cursor: pointer; font-family: var(--font-sans); font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-lock:hover { border-color: var(--fg); color: var(--fg); }
+
+    /* Modal */
+    #modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    #modal-overlay.open { display: flex; }
+    .modal-box {
+      background: rgba(253,250,245,0.97);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 1.5rem; padding: 2.5rem;
+      width: 100%; max-width: 26rem;
+      position: relative; box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+      animation: modalPop 0.25s ease;
+    }
+    [data-theme="dark"] .modal-box { background: rgba(25,20,16,0.97); }
+    @keyframes modalPop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1.25rem;
+      background: none; border: none; font-size: 1.4rem;
+      color: var(--muted-fg); cursor: pointer; line-height: 1;
+    }
+    .modal-close:hover { color: var(--fg); }
+    .modal-title { font-family: var(--font-serif); font-size: 1.8rem; text-align: center; margin-bottom: 0.5rem; color: var(--fg); }
+    .modal-sub { font-size: 0.85rem; color: var(--muted-fg); text-align: center; margin-bottom: 1.5rem; }
+    .modal-input {
+      width: 100%; padding: 0.85rem 1rem; border-radius: 0.75rem;
+      border: 1px solid var(--border); background: var(--bg);
+      font-size: 1rem; text-align: center; color: var(--fg);
+      font-family: var(--font-sans); margin-bottom: 0.75rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    .modal-input:focus { border-color: var(--primary); }
+    [data-theme="dark"] .modal-input { background: var(--card); }
+    .modal-error { color: #dc2626; font-size: 0.85rem; text-align: center; font-style: italic; margin-bottom: 0.75rem; min-height: 1.25rem; }
+    .btn-verify {
+      width: 100%; padding: 0.85rem; border-radius: 0.75rem;
+      background: var(--primary); color: var(--primary-fg);
+      border: none; font-size: 1rem; cursor: pointer;
+      font-family: var(--font-sans); transition: opacity 0.2s;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+    }
+    .btn-verify:hover { opacity: 0.88; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1A1A1A; color: #FDFAF5;
+      padding: 4rem 0 2rem;
+      border-top: 6px solid var(--primary);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; text-align: center; } }
+    .footer-logo { font-family: var(--font-serif); font-size: 1.8rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .footer-place { color: #888; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
+    .footer-love { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #666; }
+    @media (max-width: 768px) { .footer-love { justify-content: center; } }
+    .footer-note { color: #888; font-size: 0.85rem; max-width: 22rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .footer-note { margin: 0 auto 1.5rem; } }
+    .btn-share-wa {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #25D366; color: #fff; padding: 0.75rem 1.5rem;
+      border-radius: 999px; font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-share-wa:hover { opacity: 0.88; }
+    .qr-wrap {
+      background: #fff; padding: 0.5rem; border-radius: 0.75rem;
+      display: inline-block; border: 3px solid var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .qr-label { font-size: 0.65rem; color: #666; text-transform: uppercase; letter-spacing: 0.15em; text-align: center; }
+    .footer-bottom {
+      border-top: 1px solid #2a2a2a;
+      padding-top: 1.5rem; margin-top: 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+      font-size: 0.8rem; color: #666;
+    }
+
+    /* ─── UTILS ─── */
+    .wa-svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .phone-svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .flower-svg { width: 18px; height: 18px; color: var(--primary); }
+
+    @media (max-width: 600px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .family-cards { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     LOADING SCREEN
+══════════════════════════════════════════ -->
+<div id="loading-screen">
+  <div style="text-align:center;position:relative;z-index:2;">
+    <div class="loading-title">Patel Parivaar</div>
+    <div class="loading-line"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      Patel Parivaar <div class="nav-logo-dot"></div>
+    </a>
+    <div class="nav-links">
+      <a href="#hero">Profile</a>
+      <a href="about.html">About</a>
+      <a href="#family">Family</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-controls">
+      <button class="btn-icon" id="lang-toggle" title="Switch Language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6M4 14l6-6 2-2M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+        <span id="lang-label">EN</span>
+      </button>
+      <button class="btn-icon" id="theme-toggle" title="Toggle Dark Mode">
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg id="icon-sun" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button id="hamburger" aria-label="Menu">
+      <svg id="ham-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero">Profile</a>
+    <a href="about.html">About</a>
+    <a href="#family">Family</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="hi">HI</button>
+      <button class="lang-btn" data-lang="gu">GU</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-content reveal">
+    <h1 class="hero-title">Patel Parivaar</h1>
+    <p class="hero-sub">Kansa &bull; Visnagar &bull; Mahesana</p>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Section divider -->
+<div class="section-divider">
+  <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 10C50 -10 150 30 200 10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="100" cy="10" r="4" fill="currentColor"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════════
+     RINA BEN SECTION
+══════════════════════════════════════════ -->
+<section id="rina" class="profile-section">
+  <div class="container">
+    <div class="profile-layout reveal">
+
+      <!-- Scrapbook Card -->
+      <div class="profile-card-wrap" style="display:flex;justify-content:center;">
+        <div class="scrapbook-card rina">
+          <div class="washi tl"></div>
+          <div class="washi tr"></div>
+          <div class="profile-photo-wrap">
+            <img src="images/rina.jpg" alt="Patel Rina Ben Mahendrabhai" />
+            <div class="verified-badge rose">Verified Profile</div>
+          </div>
+          <div class="card-name">Rina Ben</div>
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div>
+        <h2 class="profile-name rose">Patel Rina Ben Mahendrabhai</h2>
+        <div class="profile-accent-line rose"></div>
+
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label" data-key="dob">Date of Birth</div><div class="info-value">04 January 1990</div></div>
+          <div class="info-item"><div class="info-label" data-key="age">Age</div><div class="info-value">35 Years</div></div>
+          <div class="info-item"><div class="info-label" data-key="height">Height</div><div class="info-value">147 cm</div></div>
+          <div class="info-item"><div class="info-label" data-key="weight">Weight</div><div class="info-value">58 kg</div></div>
+          <div class="info-item"><div class="info-label" data-key="profession">Profession</div><div class="info-value">Contract Teacher</div></div>
+          <div class="info-item"><div class="info-label" data-key="surname">Surname</div><div class="info-value">Patel</div></div>
+          <div class="info-item"><div class="info-label" data-key="nativePlace">Native Place</div><div class="info-value">Kansa</div></div>
+          <div class="info-item"><div class="info-label" data-key="taluka">Taluka</div><div class="info-value">Visnagar</div></div>
+          <div class="info-item" style="grid-column:1/-1;"><div class="info-label" data-key="district">District</div><div class="info-value">Mahesana</div></div>
+        </div>
+
+        <!-- Her Family -->
+        <div class="family-sub-title">
+          <svg class="flower-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 7.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/><path d="M12 3C10.5 3 9 4.5 9 6s1.5 3 3 3 3-1.5 3-3-1.5-3-3-3z"/><path d="M12 15c-1.5 0-3 1.5-3 3s1.5 3 3 3 3-1.5 3-3-1.5-3-3-3z"/><path d="M6.34 8.34C5.28 7.28 3.5 7.5 2.75 8.75S2.72 11.5 4 12.25M17.66 8.34c1.06-1.06 2.84-.84 3.59.41s.47 2.75-.81 3.5M6.34 15.66c-1.06 1.06-.84 2.84.41 3.59s2.75.47 3.5-.81M17.66 15.66c1.06 1.06.84 2.84-.41 3.59s-2.75.47-3.5-.81"/></svg>
+          Her Family
+        </div>
+        <div class="family-cards">
+          <div class="family-card">
+            <div class="family-avatar"><img src="images/father.jpg" alt="Father" /></div>
+            <div class="family-rel rose" data-key="father">Father</div>
+            <div class="family-name">Patel Mahendrabhai Gopaldas</div>
+            <div class="family-occ">Farmer</div>
+          </div>
+          <div class="family-card">
+            <div class="family-avatar"><img src="images/mother.png" alt="Mother" /></div>
+            <div class="family-rel rose" data-key="mother">Mother</div>
+            <div class="family-name">Patel Anandiben Mahendrabhai</div>
+          </div>
+          <div class="family-card">
+            <div class="family-avatar"><img src="images/gaurang.jpg" alt="Brother" /></div>
+            <div class="family-rel rose" data-key="brother">Brother</div>
+            <div class="family-name">Patel Gaurang Bhai</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     GAURANG BHAI SECTION
+══════════════════════════════════════════ -->
+<section id="gaurang" class="profile-section gaurang">
+  <div class="container">
+    <div class="profile-layout reverse reveal">
+
+      <!-- Details -->
+      <div>
+        <h2 class="profile-name gold">Patel Gaurang Bhai Mahendrabhai</h2>
+        <div class="profile-accent-line gold"></div>
+
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label" data-key="dob">Date of Birth</div><div class="info-value">15 May 1993</div></div>
+          <div class="info-item"><div class="info-label" data-key="age">Age</div><div class="info-value">31 Years</div></div>
+          <div class="info-item"><div class="info-label" data-key="height">Height</div><div class="info-value">167 cm</div></div>
+          <div class="info-item"><div class="info-label" data-key="weight">Weight</div><div class="info-value">72 kg</div></div>
+          <div class="info-item"><div class="info-label" data-key="education">Education</div><div class="info-value">ITI Fitter</div></div>
+          <div class="info-item"><div class="info-label" data-key="occupation">Occupation</div><div class="info-value">Private Job</div></div>
+          <div class="info-item"><div class="info-label" data-key="surname">Surname</div><div class="info-value">Patel</div></div>
+          <div class="info-item"><div class="info-label" data-key="nativePlace">Native Place</div><div class="info-value">Kansa</div></div>
+          <div class="info-item"><div class="info-label" data-key="taluka">Taluka</div><div class="info-value">Visnagar</div></div>
+          <div class="info-item"><div class="info-label" data-key="district">District</div><div class="info-value">Mahesana</div></div>
+        </div>
+
+        <!-- His Family -->
+        <div class="family-sub-title">
+          <svg class="flower-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--primary)"><path d="M12 7.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/><path d="M12 3C10.5 3 9 4.5 9 6s1.5 3 3 3 3-1.5 3-3-1.5-3-3-3z"/><path d="M12 15c-1.5 0-3 1.5-3 3s1.5 3 3 3 3-1.5 3-3-1.5-3-3-3z"/><path d="M6.34 8.34C5.28 7.28 3.5 7.5 2.75 8.75S2.72 11.5 4 12.25M17.66 8.34c1.06-1.06 2.84-.84 3.59.41s.47 2.75-.81 3.5M6.34 15.66c-1.06 1.06-.84 2.84.41 3.59s2.75.47 3.5-.81M17.66 15.66c1.06 1.06.84 2.84-.41 3.59s-2.75.47-3.5-.81"/></svg>
+          His Family
+        </div>
+        <div class="family-cards">
+          <div class="family-card">
+            <div class="family-avatar"><img src="images/father.jpg" alt="Father" /></div>
+            <div class="family-rel gold" data-key="father">Father</div>
+            <div class="family-name">Patel Mahendrabhai Gopaldas</div>
+            <div class="family-occ">Farmer</div>
+          </div>
+          <div class="family-card">
+            <div class="family-avatar"><img src="images/mother.png" alt="Mother" /></div>
+            <div class="family-rel gold" data-key="mother">Mother</div>
+            <div class="family-name">Patel Anandiben Mahendrabhai</div>
+          </div>
+          <div class="family-card">
+            <div class="family-avatar"><img src="images/rina.jpg" alt="Sister" /></div>
+            <div class="family-rel gold" data-key="sister">Sister</div>
+            <div class="family-name">Patel Rina Ben</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrapbook Card -->
+      <div class="profile-card-wrap" style="display:flex;justify-content:center;">
+        <div class="scrapbook-card gaurang">
+          <div class="washi tr2"></div>
+          <div class="washi tl2"></div>
+          <div class="profile-photo-wrap">
+            <img src="images/gaurang.jpg" alt="Patel Gaurang Bhai Mahendrabhai" />
+            <div class="verified-badge gold">Verified Profile</div>
+          </div>
+          <div class="card-name">Gaurang Bhai</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FAMILY SECTION
+══════════════════════════════════════════ -->
+<section id="family">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Our Roots</h2>
+      <div class="section-line"></div>
+      <p class="family-intro" style="margin-top:1.5rem;">
+        Hailing from the serene village of Kansa in Visnagar, Mahesana, the Patel family holds strong traditional values balanced with modern aspirations. Rooted in farming and community service, our foundation is built on respect, love, and unwavering support for one another.
+      </p>
+    </div>
+    <div class="family-main reveal">
+      <div>
+        <!-- Father -->
+        <div class="parent-card">
+          <div class="parent-avatar"><img src="images/father.jpg" alt="Father" /></div>
+          <div>
+            <div class="parent-role">Father</div>
+            <div class="parent-name">Patel Mahendrabhai Gopaldas</div>
+            <div class="parent-desc">Farmer &amp; Family Pillar</div>
+          </div>
+        </div>
+        <!-- Mother -->
+        <div class="parent-card">
+          <div class="parent-avatar"><img src="images/mother.png" alt="Mother" /></div>
+          <div>
+            <div class="parent-role">Mother</div>
+            <div class="parent-name">Patel Anandiben Mahendrabhai</div>
+            <div class="parent-desc">Heart of the Family</div>
+          </div>
+        </div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">&#129309;</div>
+          <div class="value-title">Integrity</div>
+          <div class="value-desc">Honesty and truthfulness in all endeavors.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#128170;</div>
+          <div class="value-title">Hard Work</div>
+          <div class="value-desc">Dedication passed down through generations.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#128106;</div>
+          <div class="value-title">Family Bond</div>
+          <div class="value-desc">Togetherness in joy and challenges alike.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#127968;</div>
+          <div class="value-title">Community</div>
+          <div class="value-desc">Deep roots in Kansa village, Visnagar.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     GALLERY
+══════════════════════════════════════════ -->
+<section id="gallery" style="background:var(--bg);">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Memories</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="polaroid" onclick="openLightbox('images/rina.jpg')">
+        <img src="images/rina.jpg" alt="Rina Ben" />
+        <div class="polaroid-caption">Rina Ben</div>
+      </div>
+      <div class="polaroid" onclick="openLightbox('images/gaurang.jpg')">
+        <img src="images/gaurang.jpg" alt="Gaurang Bhai" />
+        <div class="polaroid-caption">Gaurang Bhai</div>
+      </div>
+      <div class="polaroid" onclick="openLightbox('images/father.jpg')">
+        <img src="images/father.jpg" alt="Pitaji" />
+        <div class="polaroid-caption">Pitaji</div>
+      </div>
+      <div class="polaroid" onclick="openLightbox('images/mother.png')">
+        <img src="images/mother.png" alt="Mataji" />
+        <div class="polaroid-caption">Mataji</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <button id="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="Enlarged view" />
+</div>
+
+<!-- ══════════════════════════════════════════
+     TIMELINE
+══════════════════════════════════════════ -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Family Timeline</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1990</div>
+        <div class="timeline-title">Birth of Rina Ben</div>
+        <div class="timeline-desc">A joy to the Patel family, born in Visnagar, Mahesana.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1993</div>
+        <div class="timeline-title">Birth of Gaurang Bhai</div>
+        <div class="timeline-desc">Completing the family, born in Visnagar, Mahesana.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Present</div>
+        <div class="timeline-title">Looking Forward</div>
+        <div class="timeline-desc">Building a beautiful future grounded in traditional values and family warmth.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LOCATION
+══════════════════════════════════════════ -->
+<section id="location">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Location</h2>
+      <div class="section-line"></div>
+      <p class="location-desc" style="margin-top:1.5rem;">
+        Our roots are deep in the beautiful village of Kansa, Visnagar, Mahesana, Gujarat.
+      </p>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14660.124!2d72.5505!3d23.7116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c47fddf413bb1%3A0x2e7e7e6f06b3ace6!2sVisnagar%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1720000000000"
+        width="100%" height="420"
+        style="border:0;" allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Location Map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Contact Access</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-inner reveal">
+
+      <!-- LOCKED STATE -->
+      <div id="contact-locked">
+        <div class="lock-icon">&#128274;</div>
+        <div class="contact-protected-title">Contact Protected</div>
+        <div class="contact-protected-desc">Contact details are protected for family privacy.</div>
+        <button class="btn-unlock" onclick="openModal()">
+          <svg class="phone-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Unlock Contact
+        </button>
+      </div>
+
+      <!-- UNLOCKED STATE -->
+      <div id="contact-unlocked">
+        <div class="contact-verified-badge">
+          <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Contact Access Granted
+        </div>
+
+        <div class="contact-grid">
+          <!-- Father -->
+          <div class="contact-card">
+            <div class="contact-role">Father</div>
+            <div class="contact-name">Patel Mahendrabhai Gopaldas</div>
+            <div class="contact-number">+91 97244 58014</div>
+            <div class="contact-btns">
+              <a href="tel:+919724458014" class="btn-call">
+                <svg class="phone-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.12 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call
+              </a>
+              <a href="https://wa.me/919724458014" target="_blank" rel="noreferrer" class="btn-wa">
+                <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+          <!-- Gaurang Bhai -->
+          <div class="contact-card">
+            <div class="contact-role">Gaurang Bhai</div>
+            <div class="contact-name">Patel Gaurang Bhai Mahendrabhai</div>
+            <div class="contact-number">+91 88663 98408</div>
+            <div class="contact-btns">
+              <a href="tel:+918866398408" class="btn-call">
+                <svg class="phone-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.12 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call
+              </a>
+              <a href="https://wa.me/918866398408" target="_blank" rel="noreferrer" class="btn-wa">
+                <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-lock" onclick="lockContact()">
+          &#128274; Lock Contact Again
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Password Modal -->
+<div id="modal-overlay" onclick="handleModalOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div style="font-size:2rem;text-align:center;margin-bottom:0.75rem;">&#128274;</div>
+    <div class="modal-title">Family Contact Access</div>
+    <div class="modal-sub">Enter the access code to view contact details</div>
+    <input class="modal-input" type="password" id="pwd-input" placeholder="Enter access code" autocomplete="off" />
+    <div class="modal-error" id="modal-error"></div>
+    <button class="btn-verify" onclick="verifyPassword()">Verify Access</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Patel Parivaar</div>
+        <div class="footer-place">Kansa &bull; Visnagar &bull; Mahesana</div>
+        <div class="footer-love">
+          <svg style="width:16px;height:16px;color:var(--primary)" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          Presented with love and dignity
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <p class="footer-note">Contact details are protected. Click "Unlock Contact" in the contact section to access family contacts.</p>
+        <a href="https://wa.me/?text=Check%20out%20this%20beautiful%20Patel%20Parivaar%20family%20portfolio" target="_blank" rel="noreferrer" class="btn-share-wa">
+          <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Share via WhatsApp
+        </a>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="qr-wrap" id="qr-code"></div>
+        <div class="qr-label">Scan to view</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Patel Parivaar. All rights reserved.</span>
+      <span>Viewed <strong id="view-count">1000</strong> times</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+// ── LOADING SCREEN ──
+(function() {
+  var ls = document.getElementById('loading-screen');
+  // Create petals
+  for (var i = 0; i < 20; i++) {
+    var p = document.createElement('div');
+    p.className = 'petal';
+    var size = Math.random() * 14 + 8;
+    p.style.cssText = [
+      'width:' + size + 'px',
+      'height:' + size + 'px',
+      'left:' + (Math.random() * 100) + '%',
+      'animation-duration:' + (Math.random() * 3 + 2) + 's',
+      'animation-delay:' + (Math.random() * 2) + 's',
+    ].join(';');
+    ls.appendChild(p);
+  }
+  // Particles for hero
+  var hero = document.getElementById('hero');
+  for (var j = 0; j < 30; j++) {
+    var pt = document.createElement('div');
+    pt.className = 'particle';
+    var s = Math.random() * 5 + 2;
+    pt.style.cssText = [
+      'width:' + s + 'px', 'height:' + s + 'px',
+      'left:' + (Math.random() * 100) + '%',
+      'top:' + (Math.random() * 100) + '%',
+      'animation-duration:' + (Math.random() * 10 + 10) + 's',
+      'animation-delay:' + (Math.random() * 5) + 's',
+    ].join(';');
+    hero.appendChild(pt);
+  }
+  setTimeout(function() {
+    ls.classList.add('fade-out');
+    setTimeout(function() { ls.style.display = 'none'; }, 900);
+  }, 2500);
+})();
+
+// ── THEME ──
+var html = document.documentElement;
+var savedTheme = localStorage.getItem('patel_theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+if (savedTheme === 'dark') {
+  document.getElementById('icon-moon').style.display = 'none';
+  document.getElementById('icon-sun').style.display = '';
+}
+document.getElementById('theme-toggle').addEventListener('click', function() {
+  var t = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', t);
+  localStorage.setItem('patel_theme', t);
+  document.getElementById('icon-moon').style.display = t === 'dark' ? 'none' : '';
+  document.getElementById('icon-sun').style.display = t === 'dark' ? '' : 'none';
+});
+
+// ── NAVBAR SCROLL ──
+window.addEventListener('scroll', function() {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── HAMBURGER ──
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+
+// ── LANGUAGE ──
+var translations = {
+  en: { dob:'Date of Birth', age:'Age', height:'Height', weight:'Weight', profession:'Profession', education:'Education', surname:'Surname', nativePlace:'Native Place', taluka:'Taluka', district:'District', father:'Father', mother:'Mother', brother:'Brother', sister:'Sister', occupation:'Occupation' },
+  hi: { dob:'जन्म तिथि', age:'आयु', height:'ऊंचाई', weight:'वजन', profession:'पेशा', education:'शिक्षा', surname:'उपनाम', nativePlace:'मूल स्थान', taluka:'तालुका', district:'जिला', father:'पिता', mother:'माता', brother:'भाई', sister:'बहन', occupation:'व्यवसाय' },
+  gu: { dob:'જન્મ તારીખ', age:'ઉંમર', height:'ઊંચાઈ', weight:'વજન', profession:'વ્યવસાય', education:'શિક્ષણ', surname:'અટક', nativePlace:'વતન', taluka:'તાલુકો', district:'જિલ્લો', father:'પિતા', mother:'માતા', brother:'ભાઈ', sister:'બહેન', occupation:'વ્યવસાય' }
+};
+var currentLang = localStorage.getItem('patel_lang') || 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('patel_lang', lang);
+  document.getElementById('lang-label').textContent = lang.toUpperCase();
+  var keys = translations[lang];
+  document.querySelectorAll('[data-key]').forEach(function(el) {
+    var k = el.getAttribute('data-key');
+    if (keys[k]) el.textContent = keys[k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+applyLang(currentLang);
+document.getElementById('lang-toggle').addEventListener('click', function() {
+  var order = ['en','hi','gu'];
+  var next = order[(order.indexOf(currentLang) + 1) % 3];
+  applyLang(next);
+});
+document.querySelectorAll('.lang-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() { applyLang(btn.getAttribute('data-lang')); });
+});
+
+// ── SCROLL REVEAL ──
+var revealEls = document.querySelectorAll('.reveal');
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+revealEls.forEach(function(el) { io.observe(el); });
+
+// ── GALLERY LIGHTBOX ──
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+// ── CONTACT SYSTEM ──
+var STORAGE_KEY = 'contactUnlocked';
+var CORRECT_PWD = 'rina@500';
+
+function checkContact() {
+  if (localStorage.getItem(STORAGE_KEY) === 'true') {
+    document.getElementById('contact-locked').style.display = 'none';
+    document.getElementById('contact-unlocked').classList.add('show');
+  } else {
+    document.getElementById('contact-locked').style.display = '';
+    document.getElementById('contact-unlocked').classList.remove('show');
+  }
+}
+checkContact();
+
+function openModal() {
+  document.getElementById('modal-overlay').classList.add('open');
+  document.getElementById('pwd-input').value = '';
+  document.getElementById('modal-error').textContent = '';
+  setTimeout(function() { document.getElementById('pwd-input').focus(); }, 100);
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+function handleModalOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.getElementById('pwd-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') verifyPassword();
+});
+function verifyPassword() {
+  var val = document.getElementById('pwd-input').value.trim();
+  if (val === CORRECT_PWD) {
+    localStorage.setItem(STORAGE_KEY, 'true');
+    closeModal();
+    checkContact();
+  } else {
+    document.getElementById('modal-error').textContent = 'Incorrect Password. Please Contact Family For Access.';
+  }
+}
+function lockContact() {
+  localStorage.removeItem(STORAGE_KEY);
+  checkContact();
+}
+
+// ── VISITOR COUNTER ──
+(function() {
+  var count = parseInt(localStorage.getItem('patel_views') || '1000', 10);
+  if (!sessionStorage.getItem('patel_session')) {
+    count++;
+    localStorage.setItem('patel_views', count);
+    sessionStorage.setItem('patel_session', '1');
+  }
+  document.getElementById('view-count').textContent = count.toLocaleString();
+})();
+
+// ── YEAR ──
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── QR CODE ──
+window.addEventListener('load', function() {
+  try {
+    new QRCode(document.getElementById('qr-code'), {
+      text: window.location.href,
+      width: 100, height: 100,
+      colorDark: '#000', colorLight: '#fff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  } catch(e) {}
+});
+</script>
+</body>
+</html>
